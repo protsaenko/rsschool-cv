@@ -1,15 +1,16 @@
 
 # PROTCAENKO OLGA
 ### Front-end developer
-Location: Saint Petersburg, metro station Lesnaya
-Cell:+7(950)0460942 | Email: protsaenko@gmail.com
+Location: Saint Petersburg, metro station Lesnaya\
+Cell: +7(950)0460942 | Email: protsaenko@gmail.com
 
 
 ## EXPERIENCE
 
 **Application support Engineer**
 : June 2017 — October 2020
-Intermedia, www.intermedia.com
+Intermedia\
+www.intermedia.com
 
 
 - Provided IT support services and troubleshooting for English-speaking customers via phone calls, e-mail and chat.
@@ -21,7 +22,8 @@ Intermedia, www.intermedia.com
 
 **Support Engineer**
 : January 2014 — April 2014
-Lanck Telecom, www.lancktele.com
+Lanck Telecom\
+www.lancktele.com
 
 
 - Processing requests from IP telephony operators 
@@ -31,11 +33,11 @@ Lanck Telecom, www.lancktele.com
 ## EDUCATION
 
 **ITMO University** (2010 - 2014)
-: Faculty of Computer Technologies and Control
+: Faculty of Computer Technologies and Control\
 Bachelor degree of Information technology and computer engineering
 
 **ITMO University** (2015)
-: Faculty of Software Engineering and Computer Systems
+: Faculty of Software Engineering and Computer Systems\
 Computer Graphics and Design
 
 
