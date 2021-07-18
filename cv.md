@@ -7,10 +7,9 @@ Cell: +7(950)0460942 | Email: protsaenko@gmail.com
 
 ## EXPERIENCE
 
-**Application support Engineer**
-: June 2017 — October 2020
-Intermedia\
-www.intermedia.com
+**Application support Engineer**\
+June 2017 — October 2020\
+Intermedia, www.intermedia.com
 
 
 - Provided IT support services and troubleshooting for English-speaking customers via phone calls, e-mail and chat.
@@ -20,10 +19,9 @@ www.intermedia.com
 - Wrote educational articles about company products and supported internal Wiki. 
 
 
-**Support Engineer**
-: January 2014 — April 2014
-Lanck Telecom\
-www.lancktele.com
+**Support Engineer**\
+January 2014 — April 2014\
+Lanck Telecom, www.lancktele.com
 
 
 - Processing requests from IP telephony operators 
@@ -32,12 +30,14 @@ www.lancktele.com
 
 ## EDUCATION
 
-**ITMO University** (2010 - 2014)
-: Faculty of Computer Technologies and Control\
+**ITMO University** \
+2010 - 2014\
+Faculty of Computer Technologies and Control\
 Bachelor degree of Information technology and computer engineering
 
-**ITMO University** (2015)
-: Faculty of Software Engineering and Computer Systems\
+**ITMO University** \
+2015\
+Faculty of Software Engineering and Computer Systems\
 Computer Graphics and Design
 
 
@@ -63,3 +63,6 @@ Computer Graphics and Design
 - Teamwork and Collaboration
 - Active Listening
 - Written and Verbal Communication
+
+## CODE EXAMPLES
+ https://github.com/protsaenko/JS-code-examples
