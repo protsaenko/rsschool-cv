@@ -1,0 +1,22 @@
+{
+  "name": "rsschool-cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":"http-server -c-1 src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/protsaenko/rsschool-cv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/protsaenko/rsschool-cv/issues"
+  },
+  "homepage": "https://github.com/protsaenko/rsschool-cv#readme",
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
+}
