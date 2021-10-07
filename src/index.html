@@ -39,7 +39,7 @@
                                 v-bind:href="'mailto:' + loc.contacts_email">{{ loc.contacts_email }}</a>
                         </li>
                     </ul>
-                    <!--------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-- ICONS FROM FOMTAWESOME  -->
+
                     <div class="sidebar__icons">
                         <a class="sidebar__icon" :href="loc.link_github" target="_blank"><i
                                 class="fab fa-github fa-2x"></i></a>
@@ -135,9 +135,6 @@
 
 
         <footer class="footer">
-            <!-- ссылку на ваш гитхаб,
-            год создания приложения,
-            логотип курса со ссылкой на курс -->
             <a :href="loc.link_github" target="_blank"><i class="fab fa-github"></i>{{ loc.alias_github }}</a>
             <p>{{ loc.current_date }}</p>
         </footer>

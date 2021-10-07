@@ -133,6 +133,3 @@ const MyCV = {
 };
 
 Vue.createApp(MyCV).mount("#mycv");
-
-//{{ loc.avatar_url }}
-// " },\n{ item: "
