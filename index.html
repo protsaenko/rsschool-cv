@@ -9,230 +9,124 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a8f2935d72.js" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="main.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
+
+    <div class="wrapper" id="mycv">
 
         <header class="header">
 
             <div class="header__content">
-                <h1 class="header__name">Protsaenko Olga</h1>
-                <h2 class="header__title">Front-End developer</h2>
+                <h1 class="header__name">{{ loc.fullname }}</h1>
+                <h2 class="header__title">{{ loc.job_title }}</h2>
             </div>
-            <img class="header__avatar" src="./img/my_photo.jpg" alt="photo">
+            <img class="header__avatar" v-bind:src="loc.avatar_url" alt="photo">
         </header>
         <div class="content">
             <aside class="sidebar">
                 <section class="sidebar__contacts">
-                    <h2 class="sidebar__title">Contact Info</h2>
+                    <h2 class="sidebar__title">{{ loc.contacts_block_name }}</h2>
                     <ul class="sidebar__list sidebar__list-cropped">
-                        <!-- <li class="sidebar__item sidebar__item_complex"><i class="fas fa-map-marker-alt "> </i>
-                            <span>Saint Petersburg, m
-                                Lesnaya<span>
-                        </li> -->
                         <li class="sidebar__item sidebar__item_complex"><i class="fas fa-phone-alt"></i><a
-                                href="tel:+7(950)0460942">+7(950)0460942</a></li>
+                                v-bind:href="'tel:' + loc.contacts_phone">{{ loc.contacts_phone }}</a></li>
                         <li class="sidebar__item sidebar__item_complex"><i class="far fa-envelope"></i><a
-                                href="mailto:protsaenko@gmail.com">protsaenko@gmail.com</a>
+                                v-bind:href="'mailto:' + loc.contacts_email">{{ loc.contacts_email }}</a>
                         </li>
                     </ul>
+
                     <div class="sidebar__icons">
-                        <a class="sidebar__icon" href="https://github.com/protsaenko" target="_blank"><i
+                        <a class="sidebar__icon" :href="loc.link_github" target="_blank"><i
                                 class="fab fa-github fa-2x"></i></a>
-                        <a class="sidebar__icon" href="https://www.linkedin.com/in/olga-protsaenko-667541b3/"
-                            target="_blank"><i class="fab fa-linkedin-in  fa-2x"></i></a>
-                        <a class="sidebar__icon" href="https://t.me/Protsa" target="_blank"><i
+                        <a class="sidebar__icon" :href="loc.link_linkedin" target="_blank"><i
+                                class="fab fa-linkedin-in  fa-2x"></i></a>
+                        <a class="sidebar__icon" :href="loc.link_telegram" target="_blank"><i
                                 class="fab fa-telegram-plane  fa-2x"></i></a>
                     </div>
                 </section>
 
                 <section class="sidebar__pro-skills">
-                    <h2 class="sidebar__title">Professional skills</h2>
+                    <h2 class="sidebar__title">{{ loc.proSkills_block_name }}</h2>
                     <ul class="sidebar__list sidebar__list-column">
-                        <li class="sidebar__item sidebar__item-column">JavaScript
+                        <li class="sidebar__item sidebar__item-column" v-for="el in proSkills">
+                            {{ el.skill }}
                             <div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">HTML
-                            <div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">CSS<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">PowerShell<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">MySQL<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">Microsoft Office<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">VOIP<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">DNS<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">GIT<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">JIRA<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">Adobe Illustrator<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
-                            </div>
-                        </li>
-                        <li class="sidebar__item sidebar__item-column">JIRA / Confluence<div class="skills-bar">
-                                <div class="level" style="width: 40%;"></div>
+                                <div class="level" :style="{width: el.value+'%'}"></div>
                             </div>
                         </li>
                     </ul>
+
                 </section>
 
                 <section class="sidebar__personal-skills">
-                    <h2 class="sidebar__title">Personal skills</h2>
+                    <h2 class="sidebar__title">{{ loc.personalSkills_block_name }}</h2>
                     <ul class="sidebar__list">
-                        <li class="sidebar__item">Teamwork and Collaboration</li>
-                        <li class="sidebar__item">Active Listening</li>
-                        <li class="sidebar__item">Written and Verbal Communication</li>
-                        <li class="sidebar__item">Making test cases</li>
+                        <li class="sidebar__item" v-for="el in personalSkills">
+                            {{ el.skill }}</li>
                     </ul>
                 </section>
 
                 <section class="sidebar__languages">
-                    <h2 class="sidebar__title">Languages</h2>
+                    <h2 class="sidebar__title">{{ loc.lang_block_name }}</h2>
                     <ul class="sidebar__list">
-                        <li class="sidebar__item">English — Upper Intermediate</li>
+                        <li class="sidebar__item">{{ loc.lang_content }}</li>
                     </ul>
                 </section>
             </aside>
 
             <div class="main">
                 <section class="main__experience">
-                    <h2 class="main__title">Experience</h2>
-
-                    <h3 class="main__name">Application support Engineer</h3>
-                    <div class="main__block">
-                        <div class="main__header">
-                            <p class="main__link">Intermedia, <a href="https://www.intermedia.com/"
-                                    target=" ">www.intermedia.com</a></p>
-                            <p class="main__date">June 2017 — October 2020</p>
+                    <h2 class="main__title">{{ loc.experience_section_name }}</h2>
+                    <div v-for="el in experiencies">
+                        <h3 class="main__name">{{ el.title }}</h3>
+                        <div class="main__block">
+                            <div class="main__header">
+                                <p class="main__link">{{ el.company.name }} <a :href="'https://'+el.company.link+'/'"
+                                        target=" ">{{ el.company.link }}</a></p>
+                                <p class="main__date">{{ el.date }}</p>
+                            </div>
+                            <ul class="main__list">
+                                <li class="main__item main__item-marked" v-for="elem in el.list_items">{{elem.item}}
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="main__list">
-                            <li class="main__item main__item-marked">Provided IT support services and troubleshooting
-                                for English-speaking
-                                customers via
-                                phone calls, e-mail and chat</li>
-                            <li class="main__item main__item-marked">Processed customer requests for issues with
-                                Exchange and VOIP
-                                services
-                            </li>
-                            <li class="main__item main__item-marked">Improved monitoring and support for internal
-                                applications by creating
-                                C#
-                                tools,
-                                Kibana watchers, Powershell scripts</li>
-                            <li class="main__item main__item-marked">Supported internal database with MySQL requests and
-                                Active Directory
-                            </li>
-                            <li class="main__item main__item-marked">Wrote educational articles about company products
-                                and supported
-                                internal
-                                Wiki</li>
-                        </ul>
+
                     </div>
 
-
-                    <h3 class="main__name">Support Engineer</h3>
-                    <div class="main__block">
-                        <div class="main__header">
-                            <p class="main__link">Lanck Telecom, <a href="https://lancktele.com/" target=" ">
-                                    www.lancktele.com</a></p>
-                            <p class="main__date">January 2014 — April 2014</p>
-                        </div>
-                        <ul class="main__list">
-                            <li class="main__item main__item-marked">Processed requests from IP telephony operators
-                            </li>
-                            <li class="main__item main__item-marked">Checked quality of communication with test calls
-                                to different
-                                countries
-                            </li>
-                        </ul>
-                    </div>
                 </section>
 
                 <section class="main__education">
-                    <h2 class="main__title">Education</h2>
-                    <h3 class="main__name">ITMO University</h3>
-                    <div class="main__block">
+                    <h2 class="main__title">{{ loc.educ_section_name }}</h2>
+                    <h3 class="main__name">{{ loc.educ_title }}</h3>
+                    <div class="main__block" v-for="el in educations">
 
                         <div class="main__header">
-
-                            <p class="main__date">2010 - 2014</p>
+                            <p class="main__date">{{ el.date }}</p>
                         </div>
                         <div class="main__description">
-                            <p>Faculty of Computer Technologies and Control</p>
-                            <p>Bachelor degree of Information technology and computer engineering</p>
-                        </div>
-                    </div>
-
-                    <div class="main__block">
-                        <div class="main__header">
-                            <!-- <h3 class="main__name">ITMO University</h3> -->
-                            <p class="main__date">2015</p>
-                        </div>
-                        <div class="main__description">
-                            <p>Faculty of Software Engineering and Computer Systems</p>
-                            <p>Computer Graphics and Design</p>
+                            <p v-for="elem in el.description">{{ elem.item }}</p>
                         </div>
                     </div>
                 </section>
 
                 <section class="main__certif">
-                    <h2 class="main__title">Certifications</h2>
+                    <h2 class="main__title">{{ loc.cert_section_name }}</h2>
                     <ul class="main__list main__list-down">
-                        <li class="main__item main__item-marked">Certified for CompTIA Network+ (September 2019)</li>
-                        <li class="main__item main__item-marked">Passed the accreditation test for Networking 4 Voice
-                            and Video over IP -
-                            SSVVP (December
-                            2018)</li>
-                        <li class="main__item main__item-marked">Passed the accreditation test for SSCA® SIP training
-                            (December 2018)</li>
-                        <li class="main__item main__item-marked">Certified for Microsoft Office Specialist for Office
-                            Outlook 2013
-                            (December
-                            2017)</li>
-                        <li class="main__item main__item-marked">Certified for Effective Service and Communication by
-                            Green Key (August
-                            2017)
+                        <li class="main__item main__item-marked" v-for="el in certifications">
+                            {{ el.item }}
                         </li>
                     </ul>
                 </section>
 
                 <section class="main__code">
-                    <h2 class="main__title">Code examples</h2>
-                    <div class="main__description main__description-down">
-                        <a href="https://github.com/protsaenko/JS-code-examples" target="_blank">JavaScript
-                            exercises
-                            and snippets</a>
+                    <h2 class="main__title">{{ loc.code_section_name }}</h2>
+                    <div class="main__description main__description-down" v-for="el in codes">
+                        <a :href="el.link" target="_blank">{{ el.text }}</a>
                     </div>
                 </section>
 
@@ -241,11 +135,8 @@
 
 
         <footer class="footer">
-            <!-- ссылку на ваш гитхаб, 
-            год создания приложения, 
-            логотип курса со ссылкой на курс -->
-            <a href="https://github.com/protsaenko" target="_blank"><i class="fab fa-github"></i>protsaenko</a>
-            <p>© 2021</p>
+            <a :href="loc.link_github" target="_blank"><i class="fab fa-github"></i>{{ loc.alias_github }}</a>
+            <p>{{ loc.current_date }}</p>
         </footer>
 
 
